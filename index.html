@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eric Zander – Presentation Gallery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="main">
+    <header>
+      <h1>Eric Zander</h1>
+      <p class="subtitle">Presentation Gallery</p>
+    </header>
+
+    <section class="section" id="routenet">
+      <h2>RouteNet Seminar Presentation</h2>
+      <p>These are materials taken from a presentation on a paper by <a href="#ref-rusek2020routenet">Rusek et al. (2020)</a> about modeling networks with graph neural networks.</p>
+      <div class="media-group">
+        <figure class="media-block">
+          <img src="images/routenet_diagram.png" alt="RouteNet diagram" width="600">
+          <figcaption>RouteNet diagram</figcaption>
+        </figure>
+        <figure class="video-block">
+          <video autoplay muted loop playsinline width="600">
+            <source src="videos/routenet.mp4" type="video/mp4">
+          </video>
+          <figcaption>RouteNet demo</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="robot-interaction">
+      <h2>Robot Interaction</h2>
+      <p>These images come from a presentation on a survey by <a href="#ref-ye2024humanrobotinteraction">Ye et al. (2024)</a> on the nature of interactions between humans and security robots.<br><br>Note that some of the captions accompanying my silly Blender renders may be a little tongue in cheek :<)</p>
+      <div class="media-group media-group--single">
+        <figure class="media-block">
+          <img src="images/robot_interaction/title.png" alt="Robot Interaction title" width="600">
+          <figcaption>Title</figcaption>
+        </figure>
+      </div>
+      <div class="media-group">
+        <figure class="media-block">
+          <div class="media-block__crop">
+            <img src="images/robot_interaction/types1.png" alt="Types 1" width="600">
+          </div>
+          <figcaption>Types 1</figcaption>
+        </figure>
+        <figure class="media-block">
+          <div class="media-block__crop">
+            <img src="images/robot_interaction/types2.png" alt="Types 2" width="600">
+          </div>
+          <figcaption>Types 2</figcaption>
+        </figure>
+      </div>
+      <div class="media-group">
+        <figure class="media-block">
+          <div class="media-block__crop">
+            <img src="images/robot_interaction/interviews.png" alt="Interviews" width="600">
+          </div>
+          <figcaption>Interviews</figcaption>
+        </figure>
+        <figure class="media-block">
+          <div class="media-block__crop">
+            <img src="images/robot_interaction/ed209.png" alt="ED-209" width="600">
+          </div>
+          <figcaption>ED-209</figcaption>
+        </figure>
+      </div>
+      <div class="media-group">
+        <figure class="media-block">
+          <div class="media-block__crop">
+            <img src="images/robot_interaction/pal9000.png" alt="PAL 9000" width="600">
+          </div>
+          <figcaption>PAL 9000</figcaption>
+        </figure>
+        <figure class="media-block">
+          <div class="media-block__crop">
+            <img src="images/robot_interaction/idyllic.png" alt="Idyllic" width="600">
+          </div>
+          <figcaption>Idyllic</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section references" id="references">
+      <h2>References</h2>
+      <ol class="references-list">
+        <li id="ref-rusek2020routenet">
+          Rusek, K., Suárez-Varela, J., Almasan, P., Barlet-Ros, P., &amp; Cabellos-Aparicio, A. (2020). RouteNet: Leveraging Graph Neural Networks for Network Modeling and Optimization in SDN. <cite>IEEE Journal on Selected Areas in Communications</cite>, 38(10), 2260–2270. <a href="https://doi.org/10.1109/JSAC.2020.3000405" rel="noopener">https://doi.org/10.1109/JSAC.2020.3000405</a>
+        </li>
+        <li id="ref-ye2024humanrobotinteraction">
+          Ye, X., &amp; Robert, L. P. (2024). A Human–Security Robot Interaction Literature Review. <cite>J. Hum.-Robot Interact.</cite>, 14(2). <a href="https://doi.org/10.1145/3700888" rel="noopener">https://doi.org/10.1145/3700888</a>
+        </li>
+      </ol>
+    </section>
+  </main>
+</body>
+</html>
