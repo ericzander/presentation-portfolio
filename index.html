@@ -10,7 +10,21 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="main">
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__brand" href="#top">Eric Zander</a>
+      <nav class="site-header__nav" aria-label="Page sections">
+        <a href="#routenet">RouteNet</a>
+        <a href="#fluidsim">FluidSim</a>
+        <a href="#hackathon">Hackathon</a>
+        <a href="#robot-interaction">Robots</a>
+        <a href="#knowledge-checking">Knowledge</a>
+        <a href="#references">References</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="main">
     <header>
       <h1>Eric Zander</h1>
       <p class="subtitle">Presentation Gallery</p>
@@ -226,5 +240,43 @@
       </ol>
     </section>
   </main>
+
+  <footer class="site-footer" aria-label="Page footer">
+    <div class="site-footer__inner">
+      <span class="site-footer__section" id="footer-current-section">Presentation Gallery</span>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var sections = document.querySelectorAll('main .section');
+      var label = document.getElementById('footer-current-section');
+      if (!sections.length || !label) return;
+
+      function anchorY() {
+        return window.scrollY + Math.min(window.innerHeight * 0.22, 140);
+      }
+
+      function update() {
+        var y = anchorY();
+        var last = null;
+        for (var i = 0; i < sections.length; i++) {
+          var s = sections[i];
+          var top = s.getBoundingClientRect().top + window.scrollY;
+          if (top <= y) last = s;
+        }
+        if (last) {
+          var h2 = last.querySelector('h2');
+          label.textContent = h2 ? h2.textContent.trim() : last.id;
+        } else {
+          label.textContent = 'Presentation Gallery';
+        }
+      }
+
+      update();
+      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update, { passive: true });
+    })();
+  </script>
 </body>
 </html>
