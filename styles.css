@@ -147,6 +147,23 @@ header .subtitle {
   display: block;
 }
 
+.media-group--matched-height {
+  display: flex;
+  gap: var(--space-md);
+  align-items: flex-start;
+}
+
+.media-group--matched-height .media-block {
+  flex-basis: 0;
+  min-width: 0;
+}
+
+.media-group--matched-height .media-block img {
+  width: 100%;
+  height: auto;
+}
+
+
 /* Standalone media (image or video) */
 .media-block,
 .video-block {
