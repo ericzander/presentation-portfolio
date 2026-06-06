@@ -14,6 +14,7 @@
     <div class="site-header__inner">
       <a class="site-header__brand" href="#top">Eric Zander</a>
       <nav class="site-header__nav" aria-label="Page sections">
+        <a href="#egno">EGNO</a>
         <a href="#routenet">RouteNet</a>
         <a href="#fluidsim">FluidSim</a>
         <a href="#hackathon">Hackathon</a>
@@ -29,6 +30,103 @@
       <h1>Eric Zander</h1>
       <p class="subtitle">Presentation Gallery</p>
     </header>
+
+    <section class="section" id="egno">
+      <h2>EGNO SciML Club Presentation</h2>
+      <p>These are materials from a SciML Club presentation on equivariant graph neural operators (EGNO) proposed by <a href="#ref-xu2024equivariantgraphneuraloperator">Xu et al. (2024)</a>, with background on neural operators from <a href="#ref-kovachki2023neuraloperator">Kovachki et al. (2023)</a>.</p>
+      <p>View the full presentation: <a href="presentations/egno/zander_sciml_presentation.pdf"> (PDF)</a></p>
+
+      <div class="media-group media-group--single">
+        <figure class="media-block">
+          <img src="images/egno/title.png" alt="EGNO title" width="600">
+          <figcaption>Title</figcaption>
+        </figure>
+      </div>
+
+      <div class="media-group">
+        <figure class="video-block">
+          <video autoplay muted loop playsinline width="600">
+            <source src="videos/egno/egno_3body.mp4" type="video/mp4">
+          </video>
+          <figcaption>3-body</figcaption>
+        </figure>
+        <figure class="video-block">
+          <video autoplay muted loop playsinline width="600">
+            <source src="videos/egno/egno_nbody.mp4" type="video/mp4">
+          </video>
+          <figcaption>N-body</figcaption>
+        </figure>
+      </div>
+
+      <div class="media-group">
+        <figure class="video-block">
+          <video autoplay muted loop playsinline width="600">
+            <source src="videos/egno/egno_moleculersim.mp4" type="video/mp4">
+          </video>
+          <figcaption>Molecular sim</figcaption>
+        </figure>
+        <figure class="media-block">
+          <img src="images/egno/applications.png" alt="Applications" width="600">
+          <figcaption>Applications</figcaption>
+        </figure>
+      </div>
+
+      <div class="media-group">
+        <figure class="video-block">
+          <video autoplay muted loop playsinline width="600">
+            <source src="videos/egno/egno_gnn.mp4" type="video/mp4">
+          </video>
+          <figcaption>GNN</figcaption>
+        </figure>
+        <figure class="media-block">
+          <img src="images/egno/temporal_correlation.png" alt="Temporal correlation" width="600">
+          <figcaption>Temporal correlation</figcaption>
+        </figure>
+      </div>
+
+      <div class="media-group">
+        <figure class="media-block">
+          <img src="images/egno/neural_operators.png" alt="Neural operators" width="600">
+          <figcaption>Neural operators</figcaption>
+        </figure>
+        <figure class="media-block">
+          <img src="images/egno/freq_domain.png" alt="Frequency domain" width="600">
+          <figcaption>Frequency domain</figcaption>
+        </figure>
+      </div>
+
+      <div class="media-group">
+        <figure class="media-block">
+          <img src="images/egno/fno.png" alt="FNO" width="600">
+          <figcaption>FNO</figcaption>
+        </figure>
+        <figure class="media-block">
+          <img src="images/egno/egno.png" alt="EGNO" width="600">
+          <figcaption>EGNO</figcaption>
+        </figure>
+      </div>
+
+      <div class="media-group">
+        <figure class="media-block">
+          <img src="images/egno/egno_steps.png" alt="EGNO steps" width="600">
+          <figcaption>EGNO steps</figcaption>
+        </figure>
+        <figure class="media-block">
+          <img src="images/egno/results_motion.png" alt="Results motion" width="600">
+          <figcaption>Xu et al. share results for EGNO on a motion capture dataset.</figcaption>
+        </figure>
+      </div>
+
+      <div class="media-group media-group--single">
+        <figure class="video-block">
+          <video autoplay muted loop playsinline width="600">
+            <source src="videos/egno/egno_salsa.mp4" type="video/mp4">
+          </video>
+          <figcaption>Salsa</figcaption>
+        </figure>
+      </div>
+
+    </section>
 
     <section class="section" id="routenet">
       <h2>RouteNet Seminar Presentation</h2>
@@ -122,6 +220,7 @@
     <section class="section" id="robot-interaction">
       <h2>Robot Interaction</h2>
       <p>These images come from a presentation on a survey by <a href="#ref-ye2024humanrobotinteraction">Ye et al. (2024)</a> on the nature of interactions between humans and security robots.<br><br>Note that some of the captions accompanying my silly Blender renders may be a little tongue in cheek :<)</p>
+      <p>View the full presentation: <a href="presentations/robot_interaction/zander_robot_interaction_presentation.pdf"> (PDF)</a></p>
       <div class="media-group media-group--single">
         <figure class="media-block">
           <img src="images/robot_interaction/title.png" alt="Robot Interaction title" width="600">
@@ -228,6 +327,12 @@
     <section class="section references" id="references">
       <h2>References</h2>
       <ol class="references-list">
+        <li id="ref-xu2024equivariantgraphneuraloperator">
+          Xu, M., Han, J., Lou, A., Kossaifi, J., Ramanathan, A., Azizzadenesheli, K., Leskovec, J., Ermon, S., &amp; Anandkumar, A. (2024). Equivariant Graph Neural Operator for Modeling 3D Dynamics. <cite>arXiv preprint</cite> arXiv:2401.11037. <a href="https://arxiv.org/abs/2401.11037" rel="noopener">https://arxiv.org/abs/2401.11037</a>
+        </li>
+        <li id="ref-kovachki2023neuraloperator">
+          Kovachki, N., Li, Z., Liu, B., Azizzadenesheli, K., Bhattacharya, K., Stuart, A., &amp; Anandkumar, A. (2023). Neural operator: learning maps between function spaces with applications to PDEs. <cite>J. Mach. Learn. Res.</cite>, 24(1), Article 89. <a href="https://jmlr.org/papers/v24/kovachki23a.html" rel="noopener">https://jmlr.org/papers/v24/kovachki23a.html</a>
+        </li>
         <li id="ref-rusek2020routenet">
           Rusek, K., Suárez-Varela, J., Almasan, P., Barlet-Ros, P., &amp; Cabellos-Aparicio, A. (2020). RouteNet: Leveraging Graph Neural Networks for Network Modeling and Optimization in SDN. <cite>IEEE Journal on Selected Areas in Communications</cite>, 38(10), 2260–2270. <a href="https://doi.org/10.1109/JSAC.2020.3000405" rel="noopener">https://doi.org/10.1109/JSAC.2020.3000405</a>
         </li>
