@@ -474,7 +474,15 @@
       var videos = document.querySelectorAll('main video');
       if (!videos.length) return;
 
+      function preloadVideo(video) {
+        if (video.dataset.preloaded) return;
+        video.dataset.preloaded = '1';
+        video.preload = 'auto';
+        video.load();
+      }
+
       function playVideo(video) {
+        preloadVideo(video);
         if (video.paused) video.play().catch(function () {});
       }
 
@@ -487,17 +495,29 @@
         return;
       }
 
-      var observer = new IntersectionObserver(
+      var preloadObserver = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) preloadVideo(entry.target);
+          });
+        },
+        { rootMargin: '600px 0px', threshold: 0 }
+      );
+
+      var playObserver = new IntersectionObserver(
         function (entries) {
           entries.forEach(function (entry) {
             if (entry.isIntersecting) playVideo(entry.target);
             else pauseVideo(entry.target);
           });
         },
-        { rootMargin: '80px 0px', threshold: 0.15 }
+        { rootMargin: '0px 0px', threshold: 0.2 }
       );
 
-      videos.forEach(function (video) { observer.observe(video); });
+      videos.forEach(function (video) {
+        preloadObserver.observe(video);
+        playObserver.observe(video);
+      });
     })();
   </script>
 </body>
