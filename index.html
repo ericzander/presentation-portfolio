@@ -472,6 +472,7 @@
 
     (function () {
       var videos = document.querySelectorAll('main video');
+      var sections = document.querySelectorAll('main .section:not(.references)');
       if (!videos.length) return;
 
       function preloadVideo(video) {
@@ -481,9 +482,17 @@
         video.load();
       }
 
+      function preloadSection(section) {
+        section.querySelectorAll('video').forEach(preloadVideo);
+      }
+
       function playVideo(video) {
         preloadVideo(video);
-        if (video.paused) video.play().catch(function () {});
+        function tryPlay() {
+          if (video.paused) video.play().catch(function () {});
+        }
+        if (video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) tryPlay();
+        else video.addEventListener('canplay', tryPlay, { once: true });
       }
 
       function pauseVideo(video) {
@@ -495,13 +504,15 @@
         return;
       }
 
-      var preloadObserver = new IntersectionObserver(
+      var lookahead = function () { return window.innerHeight * 1.5; };
+
+      var sectionObserver = new IntersectionObserver(
         function (entries) {
           entries.forEach(function (entry) {
-            if (entry.isIntersecting) preloadVideo(entry.target);
+            if (entry.isIntersecting) preloadSection(entry.target);
           });
         },
-        { rootMargin: '600px 0px', threshold: 0 }
+        { rootMargin: '150% 0px', threshold: 0 }
       );
 
       var playObserver = new IntersectionObserver(
@@ -511,12 +522,22 @@
             else pauseVideo(entry.target);
           });
         },
-        { rootMargin: '0px 0px', threshold: 0.2 }
+        { rootMargin: '0px 0px', threshold: 0.1 }
       );
 
-      videos.forEach(function (video) {
-        preloadObserver.observe(video);
-        playObserver.observe(video);
+      sections.forEach(function (section) {
+        if (section.querySelector('video')) sectionObserver.observe(section);
+      });
+
+      videos.forEach(function (video) { playObserver.observe(video); });
+
+      var margin = lookahead();
+      sections.forEach(function (section) {
+        if (!section.querySelector('video')) return;
+        var rect = section.getBoundingClientRect();
+        if (rect.bottom >= -margin && rect.top <= window.innerHeight + margin) {
+          preloadSection(section);
+        }
       });
     })();
   </script>
